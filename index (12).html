@@ -1,0 +1,2390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Science Hack Academy | BY Snehasish Chowdhury</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">...
+</head>
+
+<body>
+
+<!--=============================
+        LOADING SCREEN
+==============================-->
+
+<div id="loader">
+
+    <div class="atom">
+
+        <div class="electron electron1"></div>
+        <div class="electron electron2"></div>
+        <div class="electron electron3"></div>
+
+        <div class="nucleus"></div>
+
+    </div>
+
+    <h2>Loading Science Hack Academy...</h2>
+
+</div>
+
+<!--=============================
+    PARTICLE BACKGROUND
+==============================-->
+
+<div id="particles"></div>
+
+<!--=============================
+        ADMIN BUTTON
+==============================-->
+
+<button id="adminBtn">
+
+    <i class="fa-solid fa-user-shield"></i>
+
+    Admin Login
+
+</button>
+
+<!--=============================
+        ADMIN LOGIN
+==============================-->
+
+<div id="adminModal" class="modal">
+
+    <div class="modal-content">
+
+        <span class="closeModal">&times;</span>
+
+        <h2>
+
+            <i class="fa-solid fa-lock"></i>
+
+            Admin Mode
+
+        </h2>
+
+        <input
+            type="password"
+            id="adminPassword"
+            placeholder="Enter Admin Password">
+
+        <button id="loginBtn">
+
+            Login
+
+        </button>
+
+    </div>
+
+</div>
+<!--=========================================
+            ADMIN DASHBOARD
+==========================================-->
+
+<div id="adminDashboard" class="modal">
+
+    <div class="modal-content">
+
+        <span id="closeDashboard" class="closeModal">&times;</span>
+
+        <h2>
+
+            <i class="fa-solid fa-user-shield"></i>
+
+            Admin Dashboard
+
+        </h2>
+
+       <button class="dashBtn" id="homeworkBtn">
+📚 Add Homework
+</button>
+
+<button class="dashBtn" id="manageHomeworkBtn">
+📖 Manage Homework
+</button>
+
+        <button class="dashBtn" id="notesBtn">
+📝 Add Notes
+</button>
+
+<button class="dashBtn" id="manageNotesBtn">
+📖 Manage Notes
+</button>
+
+        <button class="dashBtn" id="uploadPdfBtn">
+            📄 Upload PDF
+        </button>
+
+        <button class="dashBtn" id="managePdfBtn">
+            🗂 Manage PDFs
+        </button>
+
+<button class="dashBtn" id="videosBtn">
+🎥 Add Video
+</button>
+
+<button class="dashBtn" id="manageVideosBtn">
+📺 Manage Videos
+</button>
+
+        <button class="dashBtn" id="testsBtn">
+    🧪 Create Test
+</button>
+
+<button class="dashBtn" id="manageTestsBtn">
+    📋 Manage Tests
+</button>
+
+        <button class="dashBtn" id="competitionBtn">
+            🏆 Competitions
+        </button>
+
+        <button class="dashBtn" id="announcementBtn">
+            📢 Announcements
+        </button>
+
+        <button class="dashBtn" id="galleryBtn">
+            🖼 Gallery
+        </button>
+
+        <button class="dashBtn" id="recordsBtn">
+            👨‍🎓 Student Records
+        </button>
+
+        <button class="dashBtn" id="settingsBtn">
+            ⚙ Settings
+        </button>
+
+        <button class="dashBtn" id="logoutBtn">
+            🚪 Logout
+        </button>
+<button class="dashBtn" id="syllabusBtn">
+
+📚 Current Syllabus
+
+</button>
+
+<button class="dashBtn" id="contactBtn">
+📞 Contact Information
+</button>
+<button class="dashBtn" id="teacherBtn">
+
+👨‍🏫 Teacher Profile
+
+</button>
+
+
+    </div>
+
+</div>
+<!--=========================================
+            PDF UPLOAD MODAL
+==========================================-->
+
+
+<!--=========================================
+            HOMEWORK MODAL
+==========================================-->
+
+<div id="homeworkModal" class="modal">
+
+    <div class="modal-content">
+
+        <span id="closeHomeworkModal"
+        class="closeModal">&times;</span>
+
+        <h2>
+
+            Add Homework
+
+        </h2>
+
+        <input
+        id="homeworkTitle"
+        placeholder="Homework Title">
+
+        <textarea
+        id="homeworkText"
+        placeholder="Homework Details"
+        rows="7"></textarea>
+
+        <button
+        id="saveHomeworkBtn">
+
+            Save Homework
+
+        </button>
+
+    </div>
+
+</div>
+<!--=========================================
+        HOMEWORK MANAGER
+==========================================-->
+
+<div id="manageHomeworkModal" class="modal">
+
+    <div class="modal-content">
+
+        <span
+            id="closeManageHomework"
+            class="closeModal">
+
+            &times;
+
+        </span>
+
+        <h2>
+
+            📚 Manage Homework
+
+        </h2>
+
+        <div id="manageHomeworkList"></div>
+
+    </div>
+
+</div>
+<!--=========================================
+            NOTES MODAL
+==========================================-->
+
+<div id="notesModal" class="modal">
+
+    <div class="modal-content">
+
+        <span
+            id="closeNotesModal"
+            class="closeModal">
+
+            &times;
+
+        </span>
+
+        <h2>
+
+            📝 Add Notes
+
+        </h2>
+
+        <input
+            id="notesTitle"
+            placeholder="Notes Title">
+
+        <textarea
+            id="notesText"
+            placeholder="Write Notes..."
+            rows="8"></textarea>
+
+        <button
+            id="saveNotesBtn">
+
+            Save Notes
+
+        </button>
+
+    </div>
+
+</div>
+<!--=========================================
+            VIDEO MODAL
+==========================================-->
+
+<div id="videoModal" class="modal">
+
+    <div class="modal-content">
+
+        <span id="closeVideoModal"
+        class="closeModal">&times;</span>
+
+        <h2>Add Video</h2>
+
+        <input
+        id="videoTitle"
+        placeholder="Video Title">
+
+        <input
+        id="youtubeLink"
+        placeholder="YouTube Link (Optional)">
+
+        <p style="margin:10px 0;">OR</p>
+
+        <input
+        type="file"
+        id="videoFile"
+        accept="video/mp4">
+
+        <button
+        id="saveVideoBtn">
+
+            Save Video
+
+        </button>
+
+    </div>
+
+</div>
+<!--=========================================
+            TEST MODAL
+==========================================-->
+
+<div id="testModal" class="modal">
+
+    <div class="modal-content">
+
+        <span
+            id="closeTestModal"
+            class="closeModal">
+
+            &times;
+
+        </span>
+
+        <h2>
+
+            🧪 Create Test
+
+        </h2>
+
+        <input
+        id="testTitle"
+        placeholder="Test Name">
+
+        <textarea
+        id="questionText"
+        placeholder="Question"
+        rows="4"></textarea>
+
+        <input
+        id="option1"
+        placeholder="Option A">
+
+        <input
+        id="option2"
+        placeholder="Option B">
+
+        <input
+        id="option3"
+        placeholder="Option C">
+
+        <input
+        id="option4"
+        placeholder="Option D">
+
+        <select id="correctAnswer">
+
+            <option value="0">
+                Correct Answer : A
+            </option>
+
+            <option value="1">
+                Correct Answer : B
+            </option>
+
+            <option value="2">
+                Correct Answer : C
+            </option>
+
+            <option value="3">
+                Correct Answer : D
+            </option>
+
+        </select>
+
+        <button
+        id="saveQuestionBtn">
+
+            ➕ Save Question
+
+        </button>
+
+<button id="finishTestBtn">
+
+    ✅ Finish Test
+
+</button>
+
+    </div>
+
+</div>
+<!--=========================================
+            COMPETITION MODAL
+==========================================-->
+
+<div id="competitionModal" class="modal">
+
+    <div class="modal-content">
+
+        <span
+        id="closeCompetitionModal"
+        class="closeModal">
+
+            &times;
+
+        </span>
+
+        <h2>
+
+            🏆 Add Competition
+
+        </h2>
+
+        <input
+        id="competitionTitle"
+        placeholder="Competition Title">
+
+        <input
+        id="competitionDate"
+        type="date">
+
+        <input
+        id="competitionTime"
+        type="time">
+
+        <input
+        id="competitionVenue"
+        placeholder="Venue">
+
+        <textarea
+        id="competitionDescription"
+        rows="5"
+        placeholder="Competition Details"></textarea>
+
+        <button
+        id="saveCompetitionBtn">
+
+            Save Competition
+
+        </button>
+
+    </div>
+
+</div>
+
+<div id="announcementModal" class="modal">
+
+    <div class="modal-content">
+
+        <span id="closeAnnouncementModal" class="closeModal">
+            ✖
+        </span>
+
+        <h2>📢 Add Announcement</h2>
+
+        <input
+            id="announcementTitle"
+            type="text"
+            placeholder="Announcement Title">
+
+        <textarea
+            id="announcementText"
+            placeholder="Write Announcement..."
+            rows="6"></textarea>
+
+        <button
+            id="saveAnnouncementBtn"
+            class="btn">
+
+            Save Announcement
+
+        </button>
+
+    </div>
+
+</div>
+<div id="recordsModal" class="modal">
+
+<div class="modal-content">
+
+<span
+id="closeRecordsModal"
+class="closeModal">
+
+✖
+
+</span>
+
+<h2>
+
+👨‍🎓 Add Student
+
+</h2>
+
+<input
+
+id="studentName"
+
+type="text"
+
+placeholder="Student Name">
+
+<button
+
+id="saveStudentBtn"
+
+class="btn">
+
+➕ Add Student
+
+</button>
+
+</div>
+
+</div>
+
+<div id="resultModal" class="modal">
+
+    <div class="modal-content">
+
+        <span
+        id="closeResultModal"
+        class="closeModal">
+
+        ✖
+
+        </span>
+
+        <h2>
+
+            ➕ Add Student Result
+
+        </h2>
+
+        <input
+
+        id="resultSubject"
+
+        type="text"
+
+        placeholder="Subject">
+
+        <input
+
+        id="resultChapter"
+
+        type="text"
+
+        placeholder="Chapter">
+
+        <input
+
+        id="resultScore"
+
+        type="text"
+
+        placeholder="Marks (Example : 31/35)">
+
+        <button
+
+        id="saveResultBtn"
+
+        class="btn">
+
+        Save Result
+
+        </button>
+
+    </div>
+
+</div>
+<div id="galleryModal" class="modal">
+
+<div class="modal-content">
+
+<span
+id="closeGalleryModal"
+class="closeModal">
+
+✖
+
+</span>
+
+<h2>
+
+🖼 Add Study Image
+
+</h2>
+
+<input
+
+id="imageTitle"
+
+type="text"
+
+placeholder="Image Title">
+
+<input
+
+id="imageFile"
+
+type="file"
+
+accept="image/*">
+
+<button
+
+id="saveImageBtn"
+
+class="btn">
+
+Save Image
+
+</button>
+
+</div>
+
+</div>
+<div id="syllabusModal" class="modal">
+
+<div class="modal-content">
+
+<span
+
+id="closeSyllabusModal"
+
+class="closeModal">
+
+✖
+
+</span>
+
+<h2>📚 Current Syllabus</h2>
+
+<textarea
+
+id="syllabusText"
+
+rows="10"
+
+placeholder="Write the current syllabus...">
+
+</textarea>
+
+<button
+
+id="saveSyllabusBtn"
+
+class="btn">
+
+Save Syllabus
+
+</button>
+
+</div>
+
+</div>
+<!--=========================================
+        CONTACT INFORMATION MODAL
+==========================================-->
+
+<div id="contactModal" class="modal">
+
+<div class="modal-content">
+
+<span id="closeContactModal"
+class="closeModal">
+
+✖
+
+</span>
+
+<h2>
+
+📞 Contact Information
+
+</h2>
+
+<input
+
+id="academyAddress"
+
+type="text"
+
+placeholder="Academy Address">
+
+<input
+
+id="academyPhone"
+
+type="text"
+
+placeholder="Phone Number">
+
+<input
+
+id="academyEmail"
+
+type="text"
+
+placeholder="Email">
+
+<input
+
+id="academyWebsite"
+
+type="text"
+
+placeholder="Website">
+
+<input
+
+id="academyMap"
+
+type="text"
+
+placeholder="Google Maps Link">
+
+<button
+
+id="saveContactBtn"
+
+class="btn">
+
+Save Contact
+
+</button>
+
+</div>
+
+</div>
+
+<!--=========================================
+        TEACHER PROFILE MODAL
+==========================================-->
+
+<div id="teacherModal" class="modal">
+
+<div class="modal-content">
+
+<span
+id="closeTeacherModal"
+class="closeModal">
+
+✖
+
+</span>
+
+<h2>
+
+👨‍🏫 Teacher Profile
+
+</h2>
+
+<input
+
+id="teacherName"
+
+type="text"
+
+placeholder="Teacher Name">
+
+<textarea
+
+id="teacherMessage"
+
+placeholder="Teacher Message"
+
+rows="6"></textarea>
+
+<input
+
+id="teacherPhoto"
+
+type="file"
+
+accept="image/*">
+
+<button
+
+id="saveTeacherBtn"
+
+class="btn">
+
+Save Profile
+
+</button>
+
+</div>
+
+</div>
+<!--=========================================
+            SETTINGS
+==========================================-->
+
+<div id="settingsModal" class="modal">
+
+<div class="modal-content">
+
+<span
+id="closeSettingsModal"
+class="closeModal">
+
+✖
+
+</span>
+
+<h2>
+
+⚙ Academy Settings
+
+</h2>
+
+<input
+
+id="academyName"
+
+type="text"
+
+placeholder="Academy Name">
+
+<input
+
+id="websiteTitle"
+
+type="text"
+
+placeholder="Website Title">
+
+<input
+
+id="footerText"
+
+type="text"
+
+placeholder="Footer Text">
+
+<input
+
+id="academyLogo"
+
+type="file"
+
+accept="image/*">
+
+<button
+
+id="saveSettingsBtn"
+
+class="btn">
+
+Save Settings
+
+</button>
+
+<hr style="margin:30px 0;">
+
+<button
+
+id="resetWebsiteBtn"
+
+class="btn"
+
+style="background:#ff4b5c;">
+
+🗑 Reset Entire Website
+
+</button>
+
+</div>
+
+</div>
+<!--=========================================
+            VIDEO MANAGER
+==========================================-->
+
+<div id="manageVideoModal" class="modal">
+
+    <div class="modal-content">
+
+        <span
+            id="closeManageVideo"
+            class="closeModal">
+
+            &times;
+
+        </span>
+
+        <h2>
+
+            🎥 Manage Videos
+
+        </h2>
+
+        <div id="manageVideoList"></div>
+
+    </div>
+
+</div>
+<!--=========================================
+            MANAGE TESTS
+==========================================-->
+
+<div id="manageTestModal" class="modal">
+
+    <div class="modal-content">
+
+        <span
+            id="closeManageTest"
+            class="closeModal">
+
+            &times;
+
+        </span>
+
+        <h2>
+
+            🧪 Manage Tests
+
+        </h2>
+
+        <div id="manageTestList"></div>
+
+    </div>
+
+</div>
+<!--=========================================
+            NOTES MANAGER
+==========================================-->
+
+<div id="manageNotesModal" class="modal">
+
+    <div class="modal-content">
+
+        <span
+            id="closeManageNotes"
+            class="closeModal">
+
+            &times;
+
+        </span>
+
+        <h2>
+
+            📝 Manage Notes
+
+        </h2>
+
+        <div id="manageNotesList"></div>
+
+    </div>
+
+</div>
+<!--=============================
+        WELCOME BOARD
+==============================-->
+
+<section class="welcome-board">
+
+    <h2>
+
+        🌹 Welcome To
+
+    </h2>
+
+    <h1>
+
+        Science Hack Academy
+
+    </h1>
+
+    <p>
+
+        Learn Science • Practice • Explore • Achieve
+
+    </p>
+
+</section>
+
+<!--=============================
+        HERO SECTION
+==============================-->
+
+<header id="home">
+
+<div class="hero">
+
+<div class="hero-left">
+<div class="title-box">
+
+<img
+class="academyLogo"
+src=""
+alt="Academy Logo">
+
+<h1 class="academyName">
+
+Science Hack Academy
+
+</h1>
+
+<h3>
+
+[ BY Snehasish Chowdhury ]
+
+</h3>
+
+</div>
+
+
+<p class="hero-text">
+
+Welcome to the official Science Hack Academy Student Portal.
+
+This website is specially designed to help students stay updated with
+
+Homework,
+Tests,
+Competitions,
+Announcements,
+Study Notes,
+PDFs,
+Videos,
+Student Records,
+and much more.
+
+</p>
+
+<div class="hero-buttons">
+
+<a href="#about">
+
+<button class="btn">
+
+About Academy
+
+</button>
+
+</a>
+
+<a href="#announcement">
+
+<button class="btn">
+
+Latest Updates
+
+</button>
+
+</a>
+
+</div>
+
+</div>
+
+<div class="hero-right">
+
+<div class="scienceCube">
+
+<div class="face front">⚛️</div>
+
+<div class="face back">🧪</div>
+
+<div class="face left">🔬</div>
+
+<div class="face right">📘</div>
+
+<div class="face top">🌍</div>
+
+<div class="face bottom">⚡</div>
+
+</div>
+
+</div>
+
+</div>
+
+</header>
+
+<!--=============================
+        NAVIGATION BAR
+==============================-->
+
+<nav id="navbar">
+
+<div class="logo">
+
+Science Hack Academy
+
+</div>
+
+<ul>
+
+<li>
+
+<a href="#home">
+
+Home
+
+</a>
+
+</li>
+
+<li>
+
+<a href="#about">
+
+About
+
+</a>
+
+</li>
+
+<li>
+
+<a href="#homework">
+
+Homework
+
+</a>
+
+</li>
+
+<li>
+
+<a href="#tests">
+
+Tests
+
+</a>
+
+</li>
+
+<li>
+
+<a href="#competition">
+
+Competitions
+
+</a>
+
+</li>
+
+<li>
+
+<a href="#records">
+
+Records
+
+</a>
+
+</li>
+
+<li>
+
+<a href="#announcement">
+
+Announcements
+
+</a>
+
+</li>
+
+<li>
+
+<a href="#notes">
+
+Notes
+
+</a>
+
+</li>
+
+
+
+<li>
+
+<a href="#videos">
+
+Videos
+
+</a>
+
+</li>
+
+<li>
+
+<a href="#gallery">
+
+Photos
+
+</a>
+
+</li>
+
+<li>
+
+<a href="#chat">
+
+Live Chat
+
+</a>
+
+</li>
+
+</ul>
+
+</nav>
+
+<!--=============================
+      ABOUT SECTION
+==============================-->
+
+<section id="about" class="section">
+
+<h2>
+
+About Science Hack Academy
+
+</h2>
+
+<p>
+
+Science Hack Academy is an educational platform created to organize
+
+homework,
+
+tests,
+
+notes,
+
+student records,
+
+announcements,
+
+competition information,
+
+videos,
+
+PDFs,
+
+and many more learning resources.
+
+All information on this website can be managed by the Administrator.
+
+Students can only view the content.
+
+</p>
+
+</section>
+<!--=====================================
+        HOMEWORK SECTION
+======================================-->
+
+<section id="homework" class="section card-section">
+
+    <div class="section-title">
+        <i class="fa-solid fa-book-open"></i>
+        <h2>Today's Homework & Tasks</h2>
+    </div>
+
+    <p class="section-info">
+        Homework assigned by the teacher will appear here.
+    </p>
+
+    <div id="homeworkContent"
+        class="editable-content"
+        contenteditable="false">
+
+        <div class="empty-box">
+
+            <i class="fa-solid fa-circle-info"></i>
+
+            <h3>No Homework Available</h3>
+
+            <p>
+
+                Homework has not been assigned yet.
+
+                Please check again later.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!--=====================================
+            TEST SECTION
+======================================-->
+
+<section id="tests" class="section card-section">
+
+<div class="section-title">
+
+<i class="fa-solid fa-flask"></i>
+
+<h2>
+
+Upcoming Tests
+
+</h2>
+
+</div>
+
+<p class="section-info">
+
+All upcoming Science tests will appear below.
+
+</p>
+
+<div id="testContent"
+
+class="editable-content"
+
+contenteditable="false">
+
+<div class="empty-box">
+
+<i class="fa-solid fa-vial-circle-check"></i>
+
+<h3>
+
+No Tests Scheduled
+
+</h3>
+
+<p>
+
+Enjoy your preparation time!
+
+The next test will be announced soon.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!--=====================================
+      COMPETITION SECTION
+======================================-->
+
+<section id="competition" class="section card-section">
+
+<div class="section-title">
+
+<i class="fa-solid fa-trophy"></i>
+
+<h2>
+
+Competitions
+
+</h2>
+
+</div>
+
+<p class="section-info">
+
+Science competitions and Olympiad information.
+
+</p>
+
+<div id="competitionContent"
+
+class="editable-content"
+
+contenteditable="false">
+
+<div class="empty-box">
+
+<i class="fa-solid fa-medal"></i>
+
+<h3>
+
+No Competition Added
+
+</h3>
+
+<p>
+
+Upcoming competitions will be displayed here.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!--=====================================
+        STUDENT RECORDS
+======================================-->
+
+<section id="records"
+
+class="section card-section">
+
+<div class="section-title">
+
+<i class="fa-solid fa-users"></i>
+
+<h2>
+
+Student Records
+
+</h2>
+
+</div>
+
+<p class="section-info">
+
+Results, marks, attendance and rankings.
+
+</p>
+
+<div style="text-align:center;margin:25px 0;">
+
+    <input
+
+    id="recordSearch"
+
+    type="text"
+
+    placeholder="🔍 Search Student, Subject, Chapter or Marks..."
+
+    style="
+
+    width:85%;
+
+    max-width:650px;
+
+    padding:15px 22px;
+
+    border-radius:30px;
+
+    border:none;
+
+    outline:none;
+
+    font-size:18px;
+
+    background:#20364f;
+
+    color:white;
+
+    ">
+
+</div>
+
+<div
+id="recordsContent"
+class="sectionGrid">
+
+</div>
+
+</section>
+
+<!--=====================================
+      ANNOUNCEMENT SECTION
+======================================-->
+
+<section id="announcement"
+
+class="section card-section">
+
+<div class="section-title">
+
+<i class="fa-solid fa-bullhorn"></i>
+
+<h2>
+
+Latest Announcements
+
+</h2>
+
+</div>
+
+<p class="section-info">
+
+Important updates from the teacher.
+
+</p>
+
+<div id="announcementContent"
+
+class="editable-content"
+
+contenteditable="false">
+
+<div class="announcement-box">
+
+<i class="fa-solid fa-bell"></i>
+
+<h3>
+
+No Announcement
+
+</h3>
+
+<p>
+
+There are currently no announcements.
+
+Please visit again later.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!--=====================================
+        QUICK STATISTICS
+======================================-->
+
+<section class="statistics">
+
+<div class="stat-card">
+
+<i class="fa-solid fa-user-graduate"></i>
+
+<h2 id="studentCount">
+
+0
+
+</h2>
+
+<p>
+
+Students
+
+</p>
+
+</div>
+
+<div class="stat-card">
+
+<i class="fa-solid fa-book"></i>
+
+<h2 id="noteCount">
+
+0
+
+</h2>
+
+<p>
+
+Notes
+
+</p>
+
+</div>
+
+<div class="stat-card">
+
+<i class="fa-solid fa-file-pdf"></i>
+
+<h2 id="pdfCount">
+
+0
+
+</h2>
+
+<p>
+
+PDF Files
+
+</p>
+
+</div>
+
+<div class="stat-card">
+
+<i class="fa-solid fa-video"></i>
+
+<h2 id="videoCount">
+
+0
+
+</h2>
+
+<p>
+
+Videos
+
+</p>
+
+</div>
+
+<div class="stat-card">
+
+<i class="fa-solid fa-award"></i>
+
+<h2 id="competitionCount">
+
+0
+
+</h2>
+
+<p>
+
+Competitions
+
+</p>
+
+</div>
+
+</section>
+
+<!--=====================================
+    END OF PART 1A-2
+    (Continue with Part 1A-3)
+======================================-->
+<!--=====================================
+            NOTES SECTION
+======================================-->
+
+<section id="notes" class="section card-section">
+
+    <div class="section-title">
+        <i class="fa-solid fa-book"></i>
+        <h2>Study Notes</h2>
+    </div>
+
+    <p class="section-info">
+        Important class notes and study materials will appear here.
+    </p>
+
+    <div id="notesContent"
+        class="editable-content"
+        contenteditable="false">
+
+        <div class="empty-box">
+
+            <i class="fa-solid fa-note-sticky"></i>
+
+            <h3>No Notes Available</h3>
+
+<p>
+
+    Notes have not been added yet.
+
+    Please check again later.
+
+</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!--=========================================
+            VIDEOS SECTION
+==========================================-->
+
+<section id="videos" class="section card-section">
+
+    <div class="section-title">
+
+        <i class="fa-solid fa-video"></i>
+
+        <h2>Video Lectures</h2>
+
+    </div>
+
+    <p class="section-info">
+
+        Watch video lectures uploaded by your teacher.
+
+    </p>
+
+    <div id="videosContent">
+
+        <div class="empty-box">
+
+            <i class="fa-solid fa-video"></i>
+
+            <h3>No Videos Uploaded</h3>
+
+            <p>
+
+                Your teacher hasn't uploaded any videos yet.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!--=========================================
+            STUDY IMAGES
+==========================================-->
+
+<section id="gallery"
+
+class="section card-section">
+
+<div class="section-title">
+
+<i class="fa-solid fa-image"></i>
+
+<h2>
+
+Study Images
+
+</h2>
+
+</div>
+
+<p class="section-info">
+
+Important diagrams, summaries and study materials.
+
+</p>
+
+<div
+
+id="imageContent"
+
+class="sectionGrid">
+
+</div>
+
+</section>
+
+<!--=====================================
+        SYLLABUS SECTION
+======================================-->
+
+<section id="syllabus" class="section card-section">
+
+<div class="section-title">
+
+<i class="fa-solid fa-list-check"></i>
+
+<h2>
+
+Current Syllabus
+
+</h2>
+
+</div>
+
+<div id="syllabusContent"
+
+class="editable-content"
+
+contenteditable="false">
+
+<div class="empty-box">
+
+<i class="fa-solid fa-book-atlas"></i>
+
+<h3>
+
+No Syllabus Added
+
+</h3>
+
+<p>
+
+The syllabus will be updated by the teacher.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!--=====================================
+        UPCOMING EVENTS
+======================================-->
+
+<section id="events" class="section card-section">
+
+<div class="section-title">
+
+<i class="fa-solid fa-calendar-days"></i>
+
+<h2>
+
+Upcoming Events
+
+</h2>
+
+</div>
+
+<div class="timeline">
+
+<div class="timeline-item">
+
+<h3>
+
+Science Exhibition
+
+</h3>
+
+<p>
+
+No upcoming event scheduled.
+
+</p>
+
+</div>
+
+<div class="timeline-item">
+
+<h3>
+
+Olympiad
+
+</h3>
+
+<p>
+
+Waiting for updates.
+
+</p>
+
+</div>
+
+<div class="timeline-item">
+
+<h3>
+
+Practical Examination
+
+</h3>
+
+<p>
+
+Date will be announced.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!--=====================================
+        COUNTDOWN SECTION
+======================================-->
+
+<section class="countdown-section">
+
+<h2>
+
+⏳ Countdown To Next Test
+
+</h2>
+
+<div id="countdown">
+
+<div>
+
+<span id="days">00</span>
+
+<p>Days</p>
+
+</div>
+
+<div>
+
+<span id="hours">00</span>
+
+<p>Hours</p>
+
+</div>
+
+<div>
+
+<span id="minutes">00</span>
+
+<p>Minutes</p>
+
+</div>
+
+<div>
+
+<span id="seconds">00</span>
+
+<p>Seconds</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!--=====================================
+        PART 1A-3 ENDS HERE
+======================================-->
+<!--=====================================
+        LIVE CHAT SECTION
+======================================-->
+
+<section id="chat" class="section card-section">
+
+<div class="section-title">
+
+<i class="fa-solid fa-comments"></i>
+
+<h2>
+
+Live Classroom Chat
+
+</h2>
+
+</div>
+
+<p class="section-info">
+
+Chat with your classmates and teacher in real-time.
+(Messages will become live after Firebase integration.)
+
+</p>
+
+<div class="chat-container">
+
+<div class="chat-header">
+
+<i class="fa-solid fa-user-group"></i>
+
+Science Hack Academy Chat
+
+</div>
+
+<div id="onlineStatus">
+
+🟢 1 Teacher Online
+
+</div>
+
+<div id="chatMessages">
+
+<div class="received">
+
+<div class="sender">
+
+Teacher
+
+</div>
+
+<div class="message">
+
+👋 Welcome everyone!
+
+</div>
+
+<div class="time">
+
+09:00 AM
+
+</div>
+
+</div>
+
+</div>
+<div id="typingStatus"></div>
+<div class="chat-input-area">
+
+<div class="chatControls">
+
+<button id="emojiBtn">😊</button>
+
+<input
+type="text"
+id="chatInput"
+placeholder="Type your message...">
+
+<button id="sendMessage">
+
+<i class="fa-solid fa-paper-plane"></i>
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!--=====================================
+        CONTACT SECTION
+======================================-->
+
+<!--=========================================
+            CONTACT INFORMATION
+==========================================-->
+
+<section id="contact"
+
+class="section card-section">
+
+<div class="section-title">
+
+<i class="fa-solid fa-phone"></i>
+
+<h2>
+
+Contact Us
+
+</h2>
+
+</div>
+
+<div
+
+id="contactContent"
+
+class="sectionGrid">
+
+</div>
+
+</section>
+
+
+
+<!--=========================================
+            TEACHER PROFILE
+==========================================-->
+
+<section class="teacher-card">
+
+<div id="teacherContent">
+
+<div class="empty-box">
+
+<i class="fa-solid fa-user-tie"></i>
+
+<h3>Teacher Profile</h3>
+
+<p>
+
+Teacher information will appear here.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!--=====================================
+        FLOATING BUTTONS
+======================================-->
+
+<button id="scrollTop">
+
+<i class="fa-solid fa-arrow-up"></i>
+
+</button>
+
+<button id="quickHome">
+
+<i class="fa-solid fa-house"></i>
+
+</button>
+
+
+
+<!--=====================================
+        FOOTER
+======================================-->
+
+<footer>
+
+<div class="footerContainer">
+
+<h2>
+
+Science Hack Academy
+
+</h2>
+
+<p>
+
+Designed & Developed by
+
+<strong>
+
+Pratik Roy
+
+</strong>
+
+</p>
+
+<div class="footerLinks">
+
+<a href="#home">
+
+Home
+
+</a>
+
+<a href="#about">
+
+About
+
+</a>
+
+<a href="#notes">
+
+Notes
+
+</a>
+
+<a href="#pdf">
+
+PDFs
+
+</a>
+
+<a href="#videos">
+
+Videos
+
+</a>
+
+<a href="#gallery">
+
+Gallery
+
+</a>
+
+<a href="#chat">
+
+Live Chat
+
+</a>
+
+</div>
+
+</div>
+
+</footer>
+
+<!--=====================================
+    THANK YOU BOARD
+======================================-->
+
+<section class="thankyou">
+
+<div class="thank-card">
+
+🌹
+
+<h1>
+
+Thank You For Visiting Our Site
+
+</h1>
+
+<p>
+
+Keep Learning,
+
+Keep Exploring,
+
+Keep Growing.
+
+Science is the key to understanding the universe.
+
+Have a wonderful day!
+
+</p>
+
+</div>
+
+</section>
+
+<!--=====================================
+    FLOATING SCIENCE OBJECTS
+======================================-->
+
+<div class="floating atom1"></div>
+
+<div class="floating atom2"></div>
+
+<div class="floating atom3"></div>
+
+<div class="floating atom4"></div>
+
+<div class="floating atom5"></div>
+
+<div class="floating molecule1"></div>
+
+<div class="floating molecule2"></div>
+
+<div class="floating molecule3"></div>
+
+<div class="floating dna1"></div>
+
+<div class="floating dna2"></div>
+
+<!--=====================================
+        JAVASCRIPT
+======================================-->
+<!--=========================================
+            MANAGE PDF MODAL
+==========================================-->
+
+<div id="managePdfModal" class="modal">
+
+    <div class="modal-content">
+
+        <span id="closeManagePdf" class="closeModal">&times;</span>
+
+        <h2>Manage PDFs</h2>
+
+        <div id="managePdfList">
+
+        </div>
+
+    </div>
+
+</div>
+<!--=========================================
+            PDF VIEWER
+==========================================-->
+
+<div id="pdfViewer" class="modal">
+
+    <div class="modal-content" style="width:95%;height:90%;">
+
+        <span id="closeViewer" class="closeModal">&times;</span>
+
+        <iframe
+            id="pdfFrame"
+            style="
+                width:100%;
+                height:90%;
+                border:none;
+                border-radius:10px;
+            ">
+        </iframe>
+
+    </div>
+
+</div>
+<!--=========================================
+        VIDEO VIEWER
+==========================================-->
+
+<div id="videoViewer" class="modal">
+
+    <div class="modal-content" style="width:95%;height:90%;">
+
+        <span id="closeVideoViewer" class="closeModal">
+
+            &times;
+
+        </span>
+
+        <video
+
+            id="videoPlayer"
+
+            controls
+
+            style="width:100%;height:90%;border-radius:10px;">
+
+        </video>
+
+    </div>
+
+</div>
+<div id="imageViewer" class="modal">
+
+<div class="modal-content"
+
+style="max-width:900px;">
+
+<span
+
+id="closeImageViewer"
+
+class="closeModal">
+
+✖
+
+</span>
+
+<img
+
+id="studyImageViewer"
+
+style="
+
+width:100%;
+
+max-height:80vh;
+
+object-fit:contain;
+
+border-radius:18px;
+
+">
+
+</div>
+
+</div>
+
+<script type="module" src="script.js"></script>
+<div id="uploadLoader">
+
+    <div class="loaderBox">
+<button id="cancelUploadBtn">✖</button>
+
+        <div class="loaderAtom">⚛️</div>
+
+        <h2 id="loaderTitle">
+            Uploading...
+        </h2>
+
+        <div class="loaderBar">
+
+            <div id="loaderProgress"></div>
+
+        </div>
+
+        <p id="loaderPercent">
+            0%
+        </p>
+
+    </div>
+
+</div>
+<!--==========================
+      IMAGE VIEWER
+===========================-->
+
+<div id="imageViewer">
+
+    <span id="closeImageViewer">
+        ✖
+    </span>
+
+    <img
+    id="viewerImage"
+    src="">
+
+</div>
+
+</body>
+
+</html>
